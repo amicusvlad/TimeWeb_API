@@ -11,13 +11,13 @@ async function fetchHandlerAccount(){
         console.log('is_blocked: ', data.status.is_blocked);
         console.log('last_password_changed_at: ', data.status.last_password_changed_at);
 
-        let name = 'Название компании: ' + data.status.company_info.name;
+        let name = data.status.company_info.name;
         let isBlocked = data.status.is_blocked;
-        let lastPasswordChangedAt = Date(data.status.last_password_changed_at);
+        let lastPasswordChangedAt = data.status.last_password_changed_at;
 
         document.getElementById('name').innerHTML = name;
         document.getElementById('is_blocked').innerHTML = isBlocked;
-        document.getElementById('last_password_changed_at').innerHTML = lastPasswordChangedAt.toString();
+        document.getElementById('last_password_changed_at').innerHTML = lastPasswordChangedAt;
         
     } catch (error) {
         console.log(error);

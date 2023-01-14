@@ -5,94 +5,77 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <title>TimeWeb API Pannel</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-<body>
+<body class="p-3 m-0 border-0 bd-example bd-example-row">
     <div class="container">
         <h2>Open your console (in Google Chrome F12) =></h2>
 
-        <div class="btnsUp">
-            <button class="btnAcc" type="button">Account data</button>
-            <button class="btnFin" type="button">Financial data</button>
-            <button class="btnAll" type="button">All data</button>
+        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group me-2" role="group" aria-label="First group">
+                <button id="btnAcc" type="button" class="btn btn-primary">Account data</button>
+                <button id="btnFin" type="button" class="btn btn-primary">Financial data</button>
+                <button id="btnAll" type="button" class="btn btn-primary">All data</button>
+            </div>
+            <div class="btn-group me-2" role="group" aria-label="Second group">
+                <button id="btnClr" type="button" class="btn btn-secondary">Clear console</button>
+            </div>
+            <div class="btn-group" role="group" aria-label="Third group">
+                <button id="btnRC" type="button" class="btn btn-info">Random cat</button>
+            </div>
         </div>
 
-        <div class="btnDwn">
-            <button class="btnClr" type="button">Clear console</button>
-            <button class="btnRC" type="button">Random cat</button>
+        <div class="result">
+            <div class="container text-left">
+                <div class="row">
+                  <div class="col-6 col-sm-4">Название компании</div>
+                  <div class="col-6 col-sm-4"><span id = name></span></div>
+              
+                  <!-- Force next columns to break to new line at md breakpoint and up -->
+                  <div class="w-100 d-none d-md-block"></div>
+                  <div class="col-6 col-sm-4">Статус блокировки аккаунта</div>
+                  <div class="col-6 col-sm-4"><span id = is_blocked></span></div>
+
+                  <div class="w-100 d-none d-md-block"></div>
+                  <div class="col-6 col-sm-4">Последнее изменение пароля</div>
+                  <div class="col-6 col-sm-4"><span id = last_password_changed_at></span></div>
+
+                  <div class="w-100 d-none d-md-block"></div>
+                  <div class="col-6 col-sm-4">Баланс</div>
+                  <div class="col-6 col-sm-4"><span id = balance></span></div>
+
+                  <div class="w-100 d-none d-md-block"></div>
+                  <div class="col-6 col-sm-4">Валюта</div>
+                  <div class="col-6 col-sm-4"><span id = currency></span></div>
+
+                  <div class="w-100 d-none d-md-block"></div>
+                  <div class="col-6 col-sm-4">Скидка действует до</div>
+                  <div class="col-6 col-sm-4"><span id = discount_end_date_at></span></div>
+
+                  <div class="w-100 d-none d-md-block"></div>
+                  <div class="col-6 col-sm-4">Размер скидки</div>
+                  <div class="col-6 col-sm-4"><span id = discount_percent></span></div>
+
+                  <div class="w-100 d-none d-md-block"></div>
+                  <div class="col-6 col-sm-4">Стоимость в час</div>
+                  <div class="col-6 col-sm-4"><span id = hourly_cost></span></div>
+
+                  <div class="w-100 d-none d-md-block"></div>
+                  <div class="col-6 col-sm-4">Стоимость в месяц</div>
+                  <div class="col-6 col-sm-4"><span id = monthly_cost></span></div>
+
+                  <div class="w-100 d-none d-md-block"></div>
+                  <div class="col-6 col-sm-4">Всего оплачено</div>
+                  <div class="col-6 col-sm-4"><span id = total_paid></span></div>
+                </div>
+              </div>
         </div>
 
         <div class="card">
             <img src="assets/img/cat-default.jpg" alt="Cat" class="img">
-        </div>
-
-        <!-- <div class="result">
-            <span id = name></span>
-            <p>Статус блокировки аккаунта: <span id = is_blocked></span></p>
-            <p>Последнее изменение пароля: <span id = last_password_changed_at></span> (UTC +3)</p>
-            <p>Баланс: <span id = balance></span></p>
-            <p>Валюта: <span id = currency></span></p>
-            <p>Скидка действует до: <span id = discount_end_date_at></span> (UTC +3)</p>
-            <p>Размер скидки: <span id = discount_percent></span>%</p>
-            <p>Стоимость в час: <span id = hourly_cost></span></span></p>
-            <p>Стоимость в месяц: <span id = monthly_cost></span></span></p>
-            <p>Всего оплачено: <span id = total_paid></span></span></p>
-        </div> -->
-
-        <div class="result2">
-            <!-- <span id = name></span>
-            <p>Статус блокировки аккаунта: <span id = is_blocked></span></p>
-            <p>Последнее изменение пароля: <span id = last_password_changed_at></span> (UTC +3)</p>
-            <p>Баланс: <span id = balance></span></p>
-            <p>Валюта: <span id = currency></span></p>
-            <p>Скидка действует до: <span id = discount_end_date_at></span> (UTC +3)</p>
-            <p>Размер скидки: <span id = discount_percent></span>%</p>
-            <p>Стоимость в час: <span id = hourly_cost></span></p>
-            <p>Стоимость в месяц: <span id = monthly_cost></span></p>
-            <p>Всего оплачено: <span id = total_paid></span></p> -->
-
-            <table border="1">
-                <tr>
-                    <th>Название компании</th>
-                    <th><span id = name></span></th>
-                </tr>
-                <tr>
-                    <th>Статус блокировки аккаунта</th>
-                    <th><span id = is_blocked></span></th>
-                </tr>
-                <tr>
-                    <th>Последнее изменение пароля</th>
-                    <th><span id = last_password_changed_at></span> (UTC +3)</th>
-                </tr>
-                <tr>
-                    <th>Баланс</th>
-                    <th><span id = balance></span></th>
-                </tr>
-                <tr>
-                    <th>Валюта</th>
-                    <th><span id = currency></span></th>
-                </tr>
-                <tr>
-                    <th>Скидка действует до</th>
-                    <th><span id = discount_end_date_at></span> (UTC +3)</th>
-                </tr>
-                <tr>
-                    <th>Размер скидки</th>
-                    <th><span id = discount_percent></span>%</th>
-                </tr>
-                <tr>
-                    <th>Стоимость в час</th>
-                    <th><span id = hourly_cost></span></th>
-                </tr>
-                <tr>
-                    <th>Стоимость в месяц</th>
-                    <th><span id = monthly_cost></span></th>
-                </tr>
-                <tr>
-                    <th>Всего оплачено</th>
-                    <th><span id = total_paid></span></th>
-                </tr>
-            </table>
         </div>
         
         

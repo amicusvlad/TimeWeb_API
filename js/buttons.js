@@ -1,8 +1,8 @@
-const button = document.querySelector(".btnAcc");
-const button2 = document.querySelector(".btnFin");
-const button3 = document.querySelector(".btnAll");
-const button4 = document.querySelector(".btnClr");
-const button5 = document.querySelector(".btnRC");
+const button = document.getElementById("btnAcc");
+const button2 = document.getElementById("btnFin");
+const button3 = document.getElementById("btnAll");
+const button4 = document.getElementById("btnClr");
+const button5 = document.getElementById("btnRC");
 
 
 button.addEventListener("click", () => {
