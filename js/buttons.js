@@ -5,23 +5,30 @@ const button4 = document.getElementById("btnClr");
 const button5 = document.getElementById("btnRC");
 
 
-button.addEventListener("click", () => {
-    fetchHandlerAccount();
-});
-
-button2.addEventListener("click", () => {
-    fetchHandlerFinances();
-});
-
-button3.addEventListener("click", () => {
+document.addEventListener("DOMContentLoaded", () => {
     console.clear();
     fetchHandlerAccount();
     fetchHandlerFinances();
-});
+    randomCat();
+})
 
-button4.addEventListener("click", () => {
-    console.clear();
-});
+// button.addEventListener("click", () => {
+//     fetchHandlerAccount();
+// });
+
+// button2.addEventListener("click", () => {
+//     fetchHandlerFinances();
+// });
+
+// button3.addEventListener("click", () => {
+//     console.clear();
+//     fetchHandlerAccount();
+//     fetchHandlerFinances();
+// });
+
+// button4.addEventListener("click", () => {
+//     console.clear();
+// });
 
 
 button5.addEventListener("click", () => {
